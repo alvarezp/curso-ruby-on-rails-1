@@ -90,7 +90,7 @@ class InvoiceHeadersController < ApplicationController
   end
 
   def paid
-    @invoice_headers = InvoiceHeader.all(:conditions => ['paid = ?', true])
+    @invoice_headers = InvoiceHeader.paid_invoices
     respond_to do |format|
       format.html { render :action => "index" }
     end
