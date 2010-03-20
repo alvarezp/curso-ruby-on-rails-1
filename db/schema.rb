@@ -9,12 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100320190723) do
+ActiveRecord::Schema.define(:version => 20100320193336) do
 
   create_table "clients", :force => true do |t|
     t.string   "nombre"
     t.string   "address"
     t.string   "rfc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoice_headers", :force => true do |t|
+    t.string   "folio"
+    t.date     "date"
+    t.boolean  "paid"
+    t.integer  "payment_mode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
