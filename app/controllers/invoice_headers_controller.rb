@@ -47,6 +47,7 @@ class InvoiceHeadersController < ApplicationController
   # POST /invoice_headers.xml
   def create
     @invoice_header = InvoiceHeader.new(params[:invoice_header])
+    @invoice_header.client = Client.find(params[:invoice_header][:client_id])
 
     respond_to do |format|
       if @invoice_header.save
@@ -99,5 +100,6 @@ class InvoiceHeadersController < ApplicationController
   private
   def setup_combos
       @payment_modes = { "Cash" => 1, "Check" => 2, "Credit Card" => 3 }
+      @clients = Client.all.collect { |c| [c.nombre, c.id] }
   end
 end

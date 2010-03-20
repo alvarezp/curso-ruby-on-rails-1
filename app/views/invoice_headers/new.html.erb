@@ -8,6 +8,10 @@
     <%= f.text_field :folio %>
   </p>
   <p>
+    <%= f.label :client_id %><br />
+    <%= f.select :client_id, @clients, :selected => params[:client], :prompt => 'Select one ...' %>
+  </p>
+  <p>
     <%= f.label :date %><br />
     <%= f.date_select :date %>
   </p>
