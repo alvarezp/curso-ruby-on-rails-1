@@ -27,6 +27,7 @@ class InvoiceHeadersController < ApplicationController
   # GET /invoice_headers/new
   # GET /invoice_headers/new.xml
   def new
+    debugger
     @invoice_header = InvoiceHeader.new
     @invoice_header.date = Date.parse "2010-03-05"
 
