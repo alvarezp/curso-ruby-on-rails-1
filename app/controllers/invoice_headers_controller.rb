@@ -1,4 +1,7 @@
 class InvoiceHeadersController < ApplicationController
+
+  before_filter :setup_combos, :only => [:new, :create, :edit, :update]
+
   # GET /invoice_headers
   # GET /invoice_headers.xml
   def index
@@ -28,7 +31,6 @@ class InvoiceHeadersController < ApplicationController
     @invoice_header.date = Date.parse "2010-03-05"
 
     @invoice_header.payment_mode = 1
-    @payment_modes = { "Cash" => 1, "Check" => 2, "Credit Card" => 3 }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -85,5 +87,10 @@ class InvoiceHeadersController < ApplicationController
       format.html { redirect_to(invoice_headers_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+  def setup_combos
+      @payment_modes = { "Cash" => 1, "Check" => 2, "Credit Card" => 3 }
   end
 end
