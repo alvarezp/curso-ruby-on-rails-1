@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :invoice_headers
+  map.resources :invoice_headers, :collection => { :paid => :get }
 
   map.resources :clients
 

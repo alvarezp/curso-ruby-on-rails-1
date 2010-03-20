@@ -89,6 +89,13 @@ class InvoiceHeadersController < ApplicationController
     end
   end
 
+  def paid
+    @invoice_headers = InvoiceHeader.all(:conditions => ['paid = ?', true])
+    respond_to do |format|
+      format.html { render :action => "index" }
+    end
+  end
+
   private
   def setup_combos
       @payment_modes = { "Cash" => 1, "Check" => 2, "Credit Card" => 3 }
