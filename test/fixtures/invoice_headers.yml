@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  folio: MyString
+  date: 2010-03-20
+  paid: false
+  payment_mode: 1
+
+two:
+  folio: MyString
+  date: 2010-03-20
+  paid: false
+  payment_mode: 1

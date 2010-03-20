@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :invoice_headers
+
   map.resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,26 @@
+<h1>Listing invoice_headers</h1>
+
+<table>
+  <tr>
+    <th>Folio</th>
+    <th>Date</th>
+    <th>Paid</th>
+    <th>Payment mode</th>
+  </tr>
+
+<% for invoice_header in @invoice_headers %>
+  <tr>
+    <td><%=h invoice_header.folio %></td>
+    <td><%=h invoice_header.date %></td>
+    <td><%=h invoice_header.paid %></td>
+    <td><%=h invoice_header.payment_mode %></td>
+    <td><%= link_to 'Show', invoice_header %></td>
+    <td><%= link_to 'Edit', edit_invoice_header_path(invoice_header) %></td>
+    <td><%= link_to 'Destroy', invoice_header, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New invoice_header', new_invoice_header_path %>

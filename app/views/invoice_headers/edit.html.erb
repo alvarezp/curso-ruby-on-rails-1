@@ -1,0 +1,28 @@
+<h1>Editing invoice_header</h1>
+
+<% form_for(@invoice_header) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :folio %><br />
+    <%= f.text_field :folio %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :paid %><br />
+    <%= f.check_box :paid %>
+  </p>
+  <p>
+    <%= f.label :payment_mode %><br />
+    <%= f.text_field :payment_mode %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @invoice_header %> |
+<%= link_to 'Back', invoice_headers_path %>

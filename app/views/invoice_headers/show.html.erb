@@ -1,0 +1,23 @@
+<p>
+  <b>Folio:</b>
+  <%=h @invoice_header.folio %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @invoice_header.date %>
+</p>
+
+<p>
+  <b>Paid:</b>
+  <%=h @invoice_header.paid %>
+</p>
+
+<p>
+  <b>Payment mode:</b>
+  <%=h @invoice_header.payment_mode %>
+</p>
+
+
+<%= link_to 'Edit', edit_invoice_header_path(@invoice_header) %> |
+<%= link_to 'Back', invoice_headers_path %>
