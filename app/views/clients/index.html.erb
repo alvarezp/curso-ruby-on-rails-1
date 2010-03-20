@@ -5,6 +5,7 @@
     <th>Nombre</th>
     <th>Address</th>
     <th>Rfc</th>
+    <th>Contact name</th>
   </tr>
 
 <% for client in @clients %>
@@ -12,6 +13,7 @@
     <td><%=h client.nombre %></td>
     <td><%=h client.address %></td>
     <td><%=h client.rfc %></td>
+    <td><%=h client.contact_name %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
     <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
