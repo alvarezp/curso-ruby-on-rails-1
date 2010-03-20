@@ -12,7 +12,7 @@
   <tr>
     <td><%=h invoice_header.folio %></td>
     <td><%=h invoice_header.date %></td>
-    <td><%=h invoice_header.paid %></td>
+    <td><%=h humanize_bool(invoice_header.paid) %></td>
     <td><%=h invoice_header.payment_mode %></td>
     <td><%= link_to 'Show', invoice_header %></td>
     <td><%= link_to 'Edit', edit_invoice_header_path(invoice_header) %></td>
