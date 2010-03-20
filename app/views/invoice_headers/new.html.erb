@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :payment_mode %><br />
-    <%= f.text_field :payment_mode %>
+    <%= f.select :payment_mode, @payment_modes, :selected => params[:payment_mode], :prompt => 'Select one ...' %>
   </p>
   <p>
     <%= f.submit "Create" %>

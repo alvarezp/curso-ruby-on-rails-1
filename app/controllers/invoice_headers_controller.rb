@@ -27,6 +27,9 @@ class InvoiceHeadersController < ApplicationController
     @invoice_header = InvoiceHeader.new
     @invoice_header.date = Date.parse "2010-03-05"
 
+    @invoice_header.payment_mode = 1
+    @payment_modes = { "Cash" => 1, "Check" => 2, "Credit Card" => 3 }
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @invoice_header }
