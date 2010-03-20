@@ -25,6 +25,7 @@ class InvoiceHeadersController < ApplicationController
   # GET /invoice_headers/new.xml
   def new
     @invoice_header = InvoiceHeader.new
+    @invoice_header.date = Date.parse "2010-03-05"
 
     respond_to do |format|
       format.html # new.html.erb
